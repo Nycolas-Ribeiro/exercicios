@@ -1,0 +1,55 @@
+function ex1(){
+    nome = document.getElementById('ex1-nome').value
+    document.getElementById('ex1-saida').innerHTML = 'Olá '+nome+'!'
+}
+
+function ex2(){
+    // Insira o JavaScript aqui
+}
+
+function ex3(){
+    // Insira o JavaScript aqui
+}
+
+function ex4(){
+    // Insira o JavaScript aqui
+}
+
+function ex5(){
+    // Insira o JavaScript aqui
+}
+
+pessoas = []
+function ex14(){
+    //coletando as informações de entrada
+nome = document.getElementById("ex14-nome").value
+idade = parseInt(document.getElementById("ex14-idade").value)
+cidade = document.getElementById("ex14-cidade").value
+    //construindo o objeto pessoa
+p = {
+    
+    nome:  nome,
+    idade: idade, 
+    cidade: cidade
+}
+//adicionar a pessoa na lista de pessoas
+    pessoas.push(p)
+    
+    document.getElementById("ex14-saida").innerHTML = 
+    '<tr>'+
+        '<th>NOME</th>'+
+        '<th>NOME</th>'+
+        '<th>NOME</th>'+
+    '</tr>'
+    //mostrar todas as pessoas
+    for(i=0; pessoas.length; i++){
+    document.getElementById("ex14-saida").innerHTML +=
+    '<tr>'+
+    '<td>'+pessoas[i].nome+'</td>'+
+    '<td>'+pessoas[i].idade+'</td>'+
+    '<td>'+pessoas[i].cidade+'</td>'+
+    '</tr>'
+    }
+
+
+}
