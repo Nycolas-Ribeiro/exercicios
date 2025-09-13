@@ -19,37 +19,71 @@ function ex5(){
     // Insira o JavaScript aqui
 }
 
-pessoas = []
-function ex14(){
-    //coletando as informações de entrada
-nome = document.getElementById("ex14-nome").value
-idade = parseInt(document.getElementById("ex14-idade").value)
-cidade = document.getElementById("ex14-cidade").value
-    //construindo o objeto pessoa
-p = {
-    
-    nome:  nome,
-    idade: idade, 
-    cidade: cidade
-}
-//adicionar a pessoa na lista de pessoas
-    pessoas.push(p)
-    
-    document.getElementById("ex14-saida").innerHTML = 
-    '<tr>'+
-        '<th>NOME</th>'+
-        '<th>NOME</th>'+
-        '<th>NOME</th>'+
-    '</tr>'
-    //mostrar todas as pessoas
-    for(i=0; pessoas.length; i++){
-    document.getElementById("ex14-saida").innerHTML +=
-    '<tr>'+
-    '<td>'+pessoas[i].nome+'</td>'+
-    '<td>'+pessoas[i].idade+'</td>'+
-    '<td>'+pessoas[i].cidade+'</td>'+
-    '</tr>'
+lista = []
+function ex9(){
+    numero = parseInt(document.getElementById("ex9-numero").value)
+    lista.push(numero)
+
+    quantidade = lista.length
+    maior = Math.max(...lista)
+    menor = Math.min(...lista)
+    soma = lista.reduce((a,b) => a+b,0)
+    media = soma / quantidade
+
+
+    if(lista.length == 1){
+        maior = numero
+        menor = numero
+    }else{
+        if(numero > maior){
+            maior = numero
+        }
+        if(numero < menor){
+            menor = numero
+        }
     }
 
+    soma = 0
+    for(i=0; i<lista.length; i++){
+        soma += lista[i]
+    }
 
+    document.getElementById("ex9-saida").innerHTML =
+    '<br>quantidade: '+quantidade+
+    '<br>Maior: ' +maior+
+    '<br>Menor: ' +menor+
+    '<br>Soma: ' +soma+
+    '<br>Média: '+media.toFixed(2)
+
+    document.getElementById("ex9-saida").innerHTML = " "
+}
+
+function ex14(){
+    pessoas = []
+function ex14(){
+    // construindo o objeto "pessoa" e inserindo na lista
+    p = {
+        nome: document.getElementById('ex14-nome').value,
+        idade: parseInt(document.getElementById('ex14-idade').value),
+        cidade: document.getElementById('ex14-cidade').value
+    }
+    pessoas.push(p)
+
+    // montar uma tabela com as informações das pessoas
+    document.getElementById('ex14-saida').innerHTML =
+    '<tr>'+
+        '<th>NOME</th>'+
+        '<th>IDADE</th>'+
+        '<th>CIDADE</th>'+
+    '</tr>'
+    for(i=0; i<pessoas.length; i++){
+        document.getElementById('ex14-saida').innerHTML +=
+        '<tr>'+
+            '<td>'+pessoas[i].nome+'</td>'+
+            '<td>'+pessoas[i].idade+'</td>'+
+            '<td>'+pessoas[i].cidade+'</td>'+
+        '</tr>'
+    }
+
+}
 }
