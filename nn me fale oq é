@@ -87,3 +87,28 @@ function ex14(){
 
 }
 }
+
+function ex15(){
+     opcoes = ["pedra", "papel", "tesoura"];
+     usuario = document.getElementById("ex15-escolha").value;
+     computador = opcoes[Math.floor(Math.random() * 3)];
+
+     resultado = "";
+    if (usuario === computador) {
+        resultado = "Empate!";
+    } else if (
+        (usuario === "pedra" && computador === "tesoura") ||
+        (usuario === "papel" && computador === "pedra") ||
+        (usuario === "tesoura" && computador === "papel")
+    ) {
+        resultado = "Você venceu!";
+    } else {
+        resultado = "Computador venceu!";
+    }
+
+    document.getElementById("ex15-saida").innerHTML =
+        `Você escolheu <b>${usuario}</b>.<br>` +
+        `Computador escolheu <b>${computador}</b>.<br>` +
+        `<b>${resultado}</b>`;
+}
+
