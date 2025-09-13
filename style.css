@@ -30,3 +30,19 @@ article > h1{
 .exercicio:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.tabela{
+    margin-top: 20px;
+    background-color: grey;
+}
+
+.tabela td{
+    border: 1px solid gray;
+    padding: 3px;
+    background-color: white;
+}
+
+.tabela th{
+    color: white;
+    padding: 3px;
+}
